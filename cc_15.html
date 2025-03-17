@@ -4,10 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Risk Management Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        .riskCard {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .low { background-color: rgb(89, 138, 89); }
+        .medium { background-color: rgba(245, 65, 170, 0.349); }
+        .high { background-color: rgb(134, 38, 38); color: white; }
+        .resolveBtn {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
+
     <h1>Risk Management Dashboard</h1>
+
+    <!-- Form to Add Risk Items -->
     <form id="riskForm">
         <input type="text" id="riskName" placeholder="Risk Name" required>
         <select id="riskLevel">
@@ -18,7 +44,14 @@
         <input type="text" id="department" placeholder="Department" required>
         <button type="submit">Add Risk</button>
     </form>
+
+    <!-- Button to Increase Risk Levels -->
+    <button id="increaseRiskLevels">Increase Risk Levels</button>
+
+    <!-- Dashboard Container -->
     <div id="riskDashboard"></div>
+
     <script src="cc_15.js"></script>
+
 </body>
 </html>
