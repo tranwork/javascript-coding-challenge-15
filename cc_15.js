@@ -53,12 +53,11 @@ function addRiskItem(riskName, riskLevel, department) {
     const riskCard = document.createElement("div");
     riskCard.classList.add("riskCard");
 
-    let color;
-    if (riskLevel === "Low") color = "green";
-    else if (riskLevel === "Medium") color = "yellow";
-    else color = "red";
-
-    riskCard.style.backgroundColor = color;
+    riskCard.classList.add(
+        riskLevel === "Low" ? "low" :
+        riskLevel === "Medium" ? "medium" : 
+        "high"
+    );
 
     riskCard.innerHTML = `
         <h3>${riskName}</h3>
