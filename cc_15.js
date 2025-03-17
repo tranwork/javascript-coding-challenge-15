@@ -82,3 +82,8 @@ document.getElementById("increaseRiskLevels").addEventListener("click", () => {
         else if (level.textContent.includes("Medium")) level.textContent = "Level: High";
     });
 });
+
+//Task 6: Event Propagation Fix
+document.getElementById("riskDashboard").addEventListener("click", (e) => {
+    e.stopPropagation();
+});
