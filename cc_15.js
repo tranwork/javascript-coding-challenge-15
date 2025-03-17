@@ -47,3 +47,29 @@ function addRiskItem(riskName, riskLevel, department) {
 
     document.getElementById("riskDashboard").appendChild(riskCard);
 }
+
+//Task 4: Risk Categorization
+function addRiskItem(riskName, riskLevel, department) {
+    const riskCard = document.createElement("div");
+    riskCard.classList.add("riskCard");
+
+    let color;
+    if (riskLevel === "Low") color = "green";
+    else if (riskLevel === "Medium") color = "yellow";
+    else color = "red";
+
+    riskCard.style.backgroundColor = color;
+
+    riskCard.innerHTML = `
+        <h3>${riskName}</h3>
+        <p>Level: ${riskLevel}</p>
+        <p>Department: ${department}</p>
+        <button class="resolveBtn">Resolve</button>
+    `;
+
+    riskCard.querySelector(".resolveBtn").addEventListener("click", () => {
+        riskCard.remove();
+    });
+
+    document.getElementById("riskDashboard").appendChild(riskCard);
+}
