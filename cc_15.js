@@ -28,3 +28,22 @@ document.getElementById("riskForm").addEventListener("submit", (event) => {
 // Test Case
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
+
+//Task 3: Removing Risk Items
+function addRiskItem(riskName, riskLevel, department) {
+    const riskCard = document.createElement("div");
+    riskCard.classList.add("riskCard");
+
+    riskCard.innerHTML = `
+        <h3>${riskName}</h3>
+        <p>Level: ${riskLevel}</p>
+        <p>Department: ${department}</p>
+        <button class="resolveBtn">Resolve</button>
+    `;
+
+    riskCard.querySelector(".resolveBtn").addEventListener("click", () => {
+        riskCard.remove();
+    });
+
+    document.getElementById("riskDashboard").appendChild(riskCard);
+}
