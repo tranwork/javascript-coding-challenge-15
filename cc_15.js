@@ -73,3 +73,12 @@ function addRiskItem(riskName, riskLevel, department) {
 
     document.getElementById("riskDashboard").appendChild(riskCard);
 }
+
+//Task 5: Bulk Risk Updates
+document.getElementById("increaseRiskLevels").addEventListener("click", () => {
+    document.querySelectorAll(".riskCard").forEach((card) => {
+        let level = card.querySelector("p:nth-child(2)");
+        if (level.textContent.includes("Low")) level.textContent = "Level: Medium";
+        else if (level.textContent.includes("Medium")) level.textContent = "Level: High";
+    });
+});
